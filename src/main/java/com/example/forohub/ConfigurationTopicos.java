@@ -13,7 +13,8 @@ public class ConfigurationTopicos {
         http
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/topicos").permitAll()
-                        .anyRequest().authenticated());
+                        .anyRequest().authenticated())
+                .csrf(csrf -> csrf.ignoringRequestMatchers("/topicos"));
         return http.build();
     }
 }

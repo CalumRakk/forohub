@@ -1,4 +1,4 @@
-package com.example.forohub;
+package com.example.forohub.topico;
 
 import jakarta.persistence.*;
 
@@ -16,6 +16,16 @@ public class Topico {
     private String curso;
 
     public Topico() {
+    }
+
+    public Topico(TopicoDTO topicoDTO) {
+        this.titulo = topicoDTO.titulo();
+        this.mensaje = topicoDTO.mensaje();
+        this.fechaCreacion = topicoDTO.fechaCreacion();
+        this.status = topicoDTO.status();
+        this.autor = topicoDTO.autor();
+        this.curso = topicoDTO.curso();
+
     }
 
     public Topico(Long id, String titulo, String mensaje, String fechaCreacion, String status, String autor,
