@@ -106,4 +106,12 @@ public class Topico {
                 ", curso='" + curso + '\'' +
                 '}';
     }
+
+    public void actualizarDato(DatoTopicoRegistro dato) {
+        this.titulo = dato.titulo();
+        this.mensaje = dato.mensaje();
+        this.autor = dato.autor();
+        this.curso = dato.curso();
+    }
+
 }
