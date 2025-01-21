@@ -1,16 +1,15 @@
 package com.example.forohub;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.forohub.topico.Topico;
 import com.example.forohub.topico.TopicoDTO;
-import jakarta.validation.*;
 import com.example.forohub.topico.TopicoRepository;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -25,17 +24,12 @@ public class TopicoController {
         var topico = new Topico(topicoDTO);
         TopicoRepository.save(topico);
 
-
     }
 
-    // @GetMapping("/topicos")
-    // public List<Topico> getTopicos() {
-    //     // Aquí deberías obtener la lista de tópicos desde tu base de datos
-    //     // usando un repositorio JPA o similar.
-    //     // Por ahora, devolvemos una lista de ejemplo:
-    //     List<Topico> topicos = new ArrayList<>();
-    //     topicos.add(new Topico(1L, "Título 1", "Mensaje 1", "2024-07-27", "Abierto", "Autor 1", "Curso 1"));
-    //     topicos.add(new Topico(2L, "Título 2", "Mensaje 2", "2024-07-28", "Cerrado", "Autor 2", "Curso 2"));
-    //     return topicos;
-    // }
+    @GetMapping("/topicos/{id}")
+    public ResponseEntity getTopico(@PathVariable Long id) {
+        var topico = TopicoRepository.findById(id);
+        return ResponseEntity.ok(topico);
+    }
+
 }

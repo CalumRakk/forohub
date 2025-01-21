@@ -94,4 +94,16 @@ public class Topico {
     public void setCurso(String curso) {
         this.curso = curso;
     }
+
+    public String toString() {
+        return "Topico{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", mensaje='" + mensaje + '\'' +
+                ", fechaCreacion='" + fechaCreacion + '\'' +
+                ", status='" + status + '\'' +
+                ", autor='" + autor + '\'' +
+                ", curso='" + curso + '\'' +
+                '}';
+    }
 }
