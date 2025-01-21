@@ -8,6 +8,17 @@
             "mainClass": "com.example.forohub.ForohubApplication",
             "projectName": "forohub",
             "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=37399 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=forohub"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ForohubApplicationTests<forohub>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.forohub.ForohubApplicationTests",
+            "projectName": "forohub",
+            "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
     ]
